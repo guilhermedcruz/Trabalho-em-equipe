@@ -47,7 +47,7 @@ body.home {
 
 /* ── CARDS SECTION ── */
 .cards-section {
-    max-width: 900px;
+    max-width: 960px;
     margin: 0 auto;
     padding: 48px 24px 64px;
 }
@@ -63,7 +63,7 @@ body.home {
 
 .cards-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 16px;
 }
 
@@ -97,7 +97,7 @@ body.home {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 64px;
+    font-size: 48px;
     position: relative;
 }
 
@@ -114,6 +114,11 @@ body.home {
 .card-cover.souls {
     background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 60%, #0a0a0a 100%);
     color: #c8a96e;
+}
+
+.card-cover.elden {
+    background: linear-gradient(135deg, #1a1000 0%, #3d2a00 60%, #1a1000 100%);
+    color: #d4af37;
 }
 
 .card-shine {
@@ -133,13 +138,13 @@ body.home {
 }
 
 .card-title {
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 600;
     color: #fff;
 }
 
 .card-desc {
-    font-size: 12px;
+    font-size: 11px;
     color: #8f98a0;
     line-height: 1.5;
     flex: 1;
@@ -167,6 +172,7 @@ body.home {
 .tag-sonic { background: #0d2a4a; color: #5ec8ff; }
 .tag-mario { background: #3a0a0a; color: #ffb07f; }
 .tag-souls { background: #1a150a; color: #c8a96e; }
+.tag-elden { background: #2a1f00; color: #d4af37; }
 
 .card-arrow {
     font-size: 16px;
@@ -202,7 +208,13 @@ body.home {
 }
 
 /* ── RESPONSIVO ── */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
     .cards-grid {
         grid-template-columns: 1fr;
     }
