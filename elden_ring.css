@@ -267,3 +267,7 @@
 .Body_elden_ring ::-webkit-scrollbar-thumb:hover {
   background: rgba(200, 168, 75, 0.55);
 }
+
+script {
+  display: none !important;
+}
