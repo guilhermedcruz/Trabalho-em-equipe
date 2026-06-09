@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sonic | O Ouriço Mais Rápido do Mundo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=Oxanium:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: radial-gradient(circle at 10% 20%, #0a0f2c, #03050b);
+            font-family: 'Inter', sans-serif;
+            color: #f0f3fa;
+            line-height: 1.5;
+        }
+
+        h1, h2, h3, .logo {
+            font-family: 'Oxanium', monospace;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 24px 0;
+            border-bottom: 2px solid rgba(0, 191, 255, 0.3);
+        }
+
+        .logo {
+            font-size: 2rem;
+            background: linear-gradient(135deg, #FFD966, #FF8C42, #f43f1e);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 8px rgba(255, 100, 0, 0.3);
+        }
+
+        .logo span {
+            font-size: 1.7rem;
+            color: #FFD966;
+            background: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+        }
+
+        .nav-links a {
+            color: #eef5ff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.2s;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 4px;
+            cursor: default;
+            pointer-events: none;
+        }
+
+        /* hero */
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            padding: 60px 0 40px;
+            gap: 40px;
+        }
+
+        .hero-content {
+            flex: 2;
+        }
+
+        .hero-badge {
+            background: rgba(255, 215, 0, 0.2);
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 60px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            border-left: 3px solid gold;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            background: linear-gradient(to right, #f6d365, #fda085);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 16px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            max-width: 550px;
+            color: #cdd9ff;
+        }
+
+        .hero-decoration {
+            flex: 1;
+            text-align: center;
+            font-size: 7rem;
+            opacity: 0.9;
+            filter: drop-shadow(0 0 20px rgba(0, 150, 255, 0.5));
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin: 60px 0 20px;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #FFB347, #FF5722);
+            margin: 12px auto 0;
+            border-radius: 4px;
+        }
+
+        /* cards habilidades */
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            margin: 40px 0 20px;
+        }
+
+        .card {
+            background: rgba(12, 20, 40, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 32px;
+            padding: 28px 20px;
+            width: 260px;
+            text-align: center;
+            border: 1px solid rgba(255, 200, 100, 0.3);
+            transition: all 0.25s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #FFB347;
+        }
+
+        .card-icon {
+            font-size: 3.2rem;
+            color: #FFB347;
+            margin-bottom: 16px;
+        }
+
+        .card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            color: #bfc9f0;
+        }
+
+        /* mundos/zonas */
+        .zones-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            justify-content: center;
+            margin: 40px 0 60px;
+        }
+
+        .zone-card {
+            background: #0f142ebb;
+            border-radius: 28px;
+            padding: 28px 20px;
+            text-align: center;
+            width: 230px;
+            border: 1px solid rgba(255, 180, 70, 0.4);
+            transition: 0.2s;
+        }
+
+        .zone-card i {
+            font-size: 3rem;
+            color: #FFB347;
+            margin-bottom: 18px;
+        }
+
+        .zone-card h4 {
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+        }
+
+        .zone-card p {
+            font-size: 0.85rem;
+            color: #b9c3ff;
+        }
+
+        /* curiosidades */
+        .timeline {
+            background: linear-gradient(145deg, #071126, #01020b);
+            padding: 50px 30px;
+            border-radius: 48px;
+            margin: 40px 0 60px;
+            border-left: 6px solid #FF8C42;
+        }
+
+        .timeline h3 {
+            font-size: 2rem;
+            margin-bottom: 24px;
+        }
+
+        .facts-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+            gap: 20px;
+            list-style: none;
+        }
+
+        .facts-list li {
+            background: #0f1836c9;
+            padding: 16px 20px;
+            border-radius: 28px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-weight: 500;
+        }
+
+        .facts-list i {
+            font-size: 2rem;
+            color: #FFB347;
+        }
+
+        /* seção frontiers */
+        .frontiers-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+            margin: 50px 0 20px;
+            background: linear-gradient(120deg, #0a1030, #020617);
+            border-radius: 48px;
+            padding: 40px 32px;
+        }
+
+        .frontiers-text {
+            flex: 2;
+        }
+
+        .frontiers-text h2 {
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+
+        .frontiers-icon {
+            flex: 1;
+            text-align: center;
+            font-size: 5rem;
+            color: #FFB347;
+            filter: drop-shadow(0 0 12px #ffa500);
+        }
+
+        /* citação */
+        .quote-box {
+            background: #03071e70;
+            border-radius: 36px;
+            padding: 32px;
+            margin: 50px 0;
+            text-align: center;
+            border: 1px solid #ffaa3360;
+        }
+
+        .quote-box i {
+            font-size: 2.5rem;
+            opacity: 0.6;
+            color: #FFB347;
+        }
+
+        .quote-box p {
+            font-size: 1.6rem;
+            font-family: 'Oxanium';
+            max-width: 800px;
+            margin: 16px auto;
+        }
+
+        .speed-tag {
+            font-family: monospace;
+            background: #00000055;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 80px;
+            font-size: 0.8rem;
+        }
+
+        /* esmeraldas */
+        .emeralds-section {
+            margin: 20px 0 30px;
+            background: #0a0f28b0;
+            border-radius: 32px;
+            padding: 28px;
+        }
+
+        .emeralds-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 24px;
+            justify-content: center;
+        }
+
+        .emerald-card {
+            background: #0f1540;
+            border-radius: 28px;
+            padding: 12px 18px;
+            min-width: 120px;
+            text-align: center;
+        }
+
+        .emerald-card i {
+            margin-right: 8px;
+        }
+
+        /* BOTÕES FUNCIONAIS */
+        .buttons-area {
+            margin: 60px 0 40px;
+            padding: 30px 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 48px;
+            text-align: center;
+            border: 1px dashed #FFB347;
+        }
+
+        .buttons-area h3 {
+            font-size: 1.5rem;
+            margin-bottom: 24px;
+            color: #FFB347;
+            font-weight: 600;
+        }
+
+        .button-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 24px;
+        }
+
+        .func-button {
+            display: inline-block;
+            min-width: 140px;
+            padding: 14px 24px;
+            background: linear-gradient(135deg, #0077ff, #00aaff);
+            border: 2px solid #FFB347;
+            border-radius: 60px;
+            text-align: center;
+            font-size: 1rem;
+            font-weight: bold;
+            font-family: 'Oxanium', monospace;
+            color: #FFD966;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        .func-button:hover {
+            transform: scale(1.05);
+            background: linear-gradient(135deg, #2299ff, #33bbff);
+            box-shadow: 0 8px 20px rgba(0, 120, 255, 0.5);
+            border-color: #FFD966;
+            color: #FFF2B5;
+        }
+
+        .func-button:active {
+            transform: scale(0.98);
+        }
+
+        .buttons-note {
+            margin-top: 20px;
+            font-size: 0.85rem;
+            opacity: 0.8;
+            background: #00000055;
+            display: inline-block;
+            padding: 6px 18px;
+            border-radius: 40px;
+        }
+
+        footer {
+            margin-top: 70px;
+            border-top: 1px solid rgba(255, 150, 0, 0.3);
+            padding: 30px 0 40px;
+            text-align: center;
+            color: #9aa7d4;
+        }
+
+        @media (max-width: 780px) {
+            .hero h1 { font-size: 2.5rem; }
+            .header { flex-direction: column; gap: 16px; text-align: center; }
+            .nav-links { justify-content: center; }
+            .section-title { font-size: 2rem; }
+            .hero-decoration { font-size: 5rem; }
+            .quote-box p { font-size: 1.2rem; }
+            .frontiers-text h2 { font-size: 1.5rem; }
+            .func-button { min-width: 120px; padding: 12px 18px; font-size: 0.9rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Cabeçalho visual sem interações -->
+    <header class="header">
+        <div class="logo">
+            <i class="fas fa-bolt"></i> SONIC<span>VERSE</span>
+        </div>
+    </header>
+
+    <!-- Hero section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-tachometer-alt"></i> Velocidade Infinita
+            </div>
+            <h1>Sonic, o Ouriço <br> <span style="color: #FFB347;">Velocidade é liberdade!</span></h1>
+            <p>Corra pelos anéis, derrote o Dr. Eggman e salve o mundo com a atitude mais radical dos games. Desde 1991, Sonic é ícone de velocidade, estilo e atitude.</p>
+        </div>
+        <div class="hero-decoration">
+            <i class="fas fa-bolt"></i>
+            <i class="fas fa-shoe-prints" style="font-size: 3.5rem; margin-left: -10px;"></i>
+        </div>
+    </section>
+
+    <!-- Habilidades -->
+    <h2 class="section-title">⚡ PODERES & HABILIDADES ⚡</h2>
+    <div class="cards">
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-bolt"></i></div>
+            <h3>Super Velocidade</h3>
+            <p>Quebra a barreira do som e corre em velocidades hipersônicas. Capaz de dar a volta no mundo em segundos!</p>
+        </div>
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-ring"></i></div>
+            <h3>Coletores de Anéis</h3>
+            <p>Cada anel dourado é proteção. Com 100 anéis, Sonic ganha vida extra e brilha ainda mais.</p>
+        </div>
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-dragon"></i></div>
+            <h3>Super Sonic</h3>
+            <p>Ao reunir as 7 Esmeraldas do Caos, transforma-se em Super Sonic dourado — invencível e voante!</p>
+        </div>
+        <div class="card">
+            <div class="card-icon"><i class="fas fa-fist-raised"></i></div>
+            <h3>Spin Attack</h3>
+            <p>Ataque giratório destrutivo, capaz de perfurar robôs e destruir obstáculos com precisão mortal.</p>
+        </div>
+    </div>
+
+    <!-- Zonas clássicas -->
+    <h2 class="section-title">🌍 ZONAS & MUNDOS ICÔNICOS 🌍</h2>
+    <div class="zones-section">
+        <div class="zone-card">
+            <i class="fas fa-tree"></i>
+            <h4>Green Hill Zone</h4>
+            <p>Palmeiras, loops e grama verde. O cenário clássico que iniciou a lenda em 1991.</p>
+        </div>
+        <div class="zone-card">
+            <i class="fas fa-city"></i>
+            <h4>Chemical Plant</h4>
+            <p>Zona industrial com tubos tóxicos e muita velocidade vertical, desafio inesquecível.</p>
+        </div>
+        <div class="zone-card">
+            <i class="fas fa-mountain"></i>
+            <h4>Angel Island</h4>
+            <p>O lar da Esmeralda Mestre, repleta de ruínas antigas e cenários naturais.</p>
+        </div>
+        <div class="zone-card">
+            <i class="fas fa-space-shuttle"></i>
+            <h4>Studiopolis</h4>
+            <p>Zona televisiva cheia de luzes, holofotes e ação digna de cinema.</p>
+        </div>
+    </div>
+
+    <!-- Curiosidades aceleradas -->
+    <div class="timeline">
+        <h3><i class="fas fa-stopwatch"></i> FATOS ACELERADOS</h3>
+        <ul class="facts-list">
+            <li><i class="fas fa-calendar-alt"></i> Estreia: 23 de junho de 1991 — SEGA Genesis</li>
+            <li><i class="fas fa-tachometer-alt"></i> Velocidade máxima: Mach 5 (5x velocidade do som)</li>
+            <li><i class="fas fa-users"></i> Maior rival: Dr. Ivo "Eggman" Robotnik</li>
+            <li><i class="fas fa-star"></i> Melhores amigos: Tails, Knuckles, Amy, Shadow</li>
+            <li><i class="fas fa-video"></i> Filmes: Sonic 1, 2 e 3 (bilheteria de sucesso)</li>
+            <li><i class="fas fa-crown"></i> Primeiro jogo a popularizar o "loop" nos plataformas</li>
+        </ul>
+    </div>
+
+    <!-- Sonic Frontiers -->
+    <div class="frontiers-section">
+        <div class="frontiers-text">
+            <h2>🎮 SONIC FRONTIERS <i class="fas fa-rocket"></i></h2>
+            <p>O mundo aberto chegou para o ouriço! Explore ilhas misteriosas, resolva enigmas antigos e liberte seus amigos. A velocidade nunca foi tão imersiva. Enfrente inimigos gigantes e descubra os segredos das Starfall Islands.</p>
+        </div>
+        <div class="frontiers-icon">
+            <i class="fas fa-globe-americas"></i>
+            <i class="fas fa-infinity" style="font-size: 3rem; display: block;"></i>
+        </div>
+    </div>
+
+    <!-- Citação -->
+    <div class="quote-box">
+        <i class="fas fa-quote-left"></i>
+        <p>"Vida é como um videogame, tem que ter coragem e velocidade pra passar de fase!" – Sonic</p>
+        <span class="speed-tag"><i class="fas fa-running"></i> #SonicSpeed #TeamSonic</span>
+    </div>
+
+    <!-- Esmeraldas do Caos -->
+    <div class="emeralds-section">
+        <h3 style="display: flex; gap: 12px; align-items: center; font-size: 1.8rem;"><i class="fas fa-gem"></i> As Esmeraldas do Caos</h3>
+        <div class="emeralds-grid">
+            <div class="emerald-card"><i class="fas fa-circle" style="color:#ff4444;"></i> <strong>Vermelha</strong></div>
+            <div class="emerald-card"><i class="fas fa-circle" style="color:#44ff44;"></i> <strong>Verde</strong></div>
+            <div class="emerald-card"><i class="fas fa-circle" style="color:#4444ff;"></i> <strong>Azul</strong></div>
+            <div class="emerald-card"><i class="fas fa-circle" style="color:#ffff44;"></i> <strong>Amarela</strong></div>
+            <div class="emerald-card"><i class="fas fa-circle" style="color:#ff88ff;"></i> <strong>Roxa</strong></div>
+            <div class="emerald-card"><i class="fas fa-circle" style="color:#88ccff;"></i> <strong>Ciano</strong></div>
+            <div class="emerald-card"><i class="fas fa-circle" style="color:#ffa500;"></i> <strong>Laranja</strong></div>
+        </div>
+        <p style="margin-top: 28px; font-size: 0.95rem; text-align: center;">Quando todas as 7 esmeraldas são reunidas, Sonic pode se transformar no poderoso <strong>Super Sonic</strong>!</p>
+    </div>
+
+    <!-- SEÇÃO DOS 5 BOTÕES FUNCIONAIS - Edite texto e link -->
+    <div class="buttons-area">
+        <h3><i class="fas fa-link"></i> LINKS RÁPIDOS</h3>
+        <div class="button-row">
+            <!-- BOTÃO 1 - Edite o texto e o href -->
+            <a href="index.html" class="func-button" target="_blank" rel="noopener noreferrer">Inicio</a>
+            <!-- BOTÃO 2 -->
+            <a href="dark_souls.html" class="func-button" target="_blank" rel="noopener noreferrer">Dark dark_souls</a>
+            <!-- BOTÃO 3 -->
+            <a href="elden_ring.html" class="func-button" target="_blank" rel="noopener noreferrer">Elden Ring</a>
+            <!-- BOTÃO 4 -->
+            <a href="sonic.html" class="func-button" target="_blank" rel="noopener noreferrer">Sonic</a>
+            <!-- BOTÃO 5 -->
+            <a href="mario.html" class="func-button" target="_blank" rel="noopener noreferrer">Mario</a>
+        </div>
+        <div class="buttons-note">
+            <i class="fas fa-edit"></i> Dica: Edite o texto dentro de cada botão e o link em href="#" (ex: href="https://seusite.com")
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        <div class="logo" style="justify-content: center; display: flex; gap: 8px; font-size: 1.6rem;">⚡ SONIC FOREVER ⚡</div>
+        <p>Página dedicada ao ouriço azul mais rápido do planeta. Gotta go fast!</p>
+        <p style="margin-top: 20px;">© 2025 SonicVerse — SEGA e Sonic são marcas registradas. Fan page criativa.</p>
+    </div>
+</footer>
+
+</body>
+</html>
