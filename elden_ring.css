@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Cinzel+Decorative:wght@400;700&display=swap');
+ 
+/* ================================================
+   ELDEN RING — Stylesheet
+   Tema: Ouro eterno, runas, céu noturno das
+         Terras Intermédias e grandiosidade épica
+   ================================================ */
+ 
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+ 
+/* ── Variáveis de cor ─────────────────────────── */
+ 
+:root {
+  --er-gold:        #c8a84b;
+  --er-gold-bright: #e8cc7a;
+  --er-gold-dim:    #8a6e30;
+  --er-gold-glow:   rgba(200, 168, 75, 0.18);
+  --er-silver:      #b0bec5;
+  --er-text:        #c5b9a0;
+  --er-text-dim:    #8a7f6a;
+  --er-bg:          #07090f;
+  --er-bg-mid:      #0d1018;
+  --er-border:      rgba(200, 168, 75, 0.22);
+}
+ 
+/* ── Body ─────────────────────────────────────── */
+ 
+.Body_elden_ring {
+  background-color: var(--er-bg);
+  background-image:
+    radial-gradient(ellipse at 50% 0%,   rgba(30, 45, 90, 0.35) 0%,  transparent 55%),
+    radial-gradient(ellipse at 80% 100%, rgba(100, 60, 10, 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse at 20% 60%,  rgba(20, 30, 70, 0.15) 0%,  transparent 40%);
+  min-height: 100vh;
+  padding: 0 1.5rem 6rem;
+  font-family: 'Cormorant Garamond', 'Palatino Linotype', Georgia, serif;
+  color: var(--er-text);
+  line-height: 1.9;
+}
+ 
+/* ── Container central ────────────────────────── */
+ 
+.Body_elden_ring > * {
+  max-width: 780px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+ 
+/* ── Emblema / runa superior ──────────────────── */
+ 
+.er-rune-header {
+  padding-top: 3.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+ 
+.er-rune-header svg {
+  width: 90px;
+  height: 90px;
+  opacity: 0.75;
+  display: inline-block;
+}
+ 
+/* ── Título principal ─────────────────────────── */
+ 
+.er-main-title {
+  font-family: 'Cinzel Decorative', 'Cinzel', serif !important;
+  font-size: 2rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--er-gold-bright) !important;
+  text-align: center;
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0.3rem !important;
+  text-shadow:
+    0 0 40px rgba(200, 168, 75, 0.35),
+    0 0 80px rgba(200, 168, 75, 0.15);
+}
+ 
+/* ── Subtítulo decorativo ─────────────────────── */
+ 
+.er-subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.95rem;
+  font-style: italic;
+  font-weight: 300;
+  letter-spacing: 0.18em;
+  color: var(--er-gold-dim);
+  text-align: center;
+  margin-bottom: 3rem !important;
+}
+ 
+/* ── H1 — Títulos de seção ────────────────────── */
+ 
+.Body_elden_ring h1 {
+  font-family: 'Cinzel Decorative', 'Cinzel', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--er-gold);
+  text-shadow: 0 0 24px rgba(200, 168, 75, 0.22);
+ 
+  margin-top: 3.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.65rem;
+ 
+  border-bottom: none;
+  position: relative;
+}
+ 
+.Body_elden_ring h1::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(200, 168, 75, 0.5) 15%,
+    rgba(200, 168, 75, 0.5) 85%,
+    transparent
+  );
+}
+ 
+/* ── H2 — Sub-seções (Semideuses etc.) ───────── */
+ 
+.Body_elden_ring h2 {
+  font-family: 'Cinzel Decorative', 'Cinzel', serif;
+  font-size: 0.88rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--er-silver);
+ 
+  margin-top: 2.2rem;
+  margin-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-bottom: 0.3rem;
+ 
+  border-left: 1px solid rgba(176, 190, 197, 0.35);
+  border-bottom: none;
+  position: relative;
+}
+ 
+.Body_elden_ring h2::before {
+  content: '✦';
+  position: absolute;
+  left: -0.8rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.5rem;
+  color: var(--er-gold-dim);
+  opacity: 0.7;
+}
+ 
+/* ── Parágrafos ───────────────────────────────── */
+ 
+.Body_elden_ring p {
+  font-size: 1.12rem;
+  font-weight: 300;
+  line-height: 1.95;
+  color: var(--er-text);
+  text-align: justify;
+  margin-bottom: 1rem;
+}
+ 
+/* ── Botão temático ───────────────────────────── */
+ 
+.btn_elden_ring {
+  display: block;
+  width: fit-content;
+  margin: 4rem auto 0;
+  padding: 0;
+  background: transparent;
+  border: 1px solid rgba(200, 168, 75, 0.38);
+  cursor: pointer;
+  position: relative;
+  transition: border-color 0.4s ease;
+}
+ 
+.btn_elden_ring::before,
+.btn_elden_ring::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-color: var(--er-gold);
+  border-style: solid;
+  opacity: 0.65;
+  transition: opacity 0.4s ease;
+}
+ 
+.btn_elden_ring::before {
+  top: -4px;
+  left: -4px;
+  border-width: 1px 0 0 1px;
+}
+ 
+.btn_elden_ring::after {
+  bottom: -4px;
+  right: -4px;
+  border-width: 0 1px 1px 0;
+}
+ 
+.btn_elden_ring a {
+  display: block;
+  padding: 0.75rem 2.8rem;
+  font-family: 'Cinzel Decorative', 'Cinzel', serif;
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--er-gold);
+  text-decoration: none;
+  transition: color 0.4s ease, background 0.4s ease, letter-spacing 0.4s ease;
+}
+ 
+.btn_elden_ring:hover {
+  border-color: rgba(200, 168, 75, 0.75);
+}
+ 
+.btn_elden_ring:hover::before,
+.btn_elden_ring:hover::after {
+  opacity: 1;
+}
+ 
+.btn_elden_ring:hover a {
+  color: var(--er-gold-bright);
+  background: rgba(200, 168, 75, 0.06);
+  letter-spacing: 0.34em;
+}
+ 
+/* ── Seleção de texto ─────────────────────────── */
+ 
+.Body_elden_ring ::selection {
+  background-color: rgba(200, 168, 75, 0.25);
+  color: #f0e0b0;
+}
+ 
+/* ── Scrollbar (WebKit) ───────────────────────── */
+ 
+.Body_elden_ring ::-webkit-scrollbar {
+  width: 5px;
+}
+ 
+.Body_elden_ring ::-webkit-scrollbar-track {
+  background: var(--er-bg);
+}
+ 
+.Body_elden_ring ::-webkit-scrollbar-thumb {
+  background: rgba(200, 168, 75, 0.3);
+  border-radius: 3px;
+}
+ 
+.Body_elden_ring ::-webkit-scrollbar-thumb:hover {
+  background: rgba(200, 168, 75, 0.55);
+}
