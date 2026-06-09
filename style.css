@@ -1,0 +1,213 @@
+/* ── RESET & BASE ── */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body.home {
+    font-family: 'Inter', sans-serif;
+    background: #1b2838;
+    color: #c6d4df;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* ── HERO ── */
+.steam-hero {
+    background: #16202c;
+    border-bottom: 1px solid #2a3f5a;
+    padding: 48px 24px 40px;
+    text-align: center;
+}
+
+.home-h1 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+}
+
+.home-p {
+    font-size: 14px;
+    color: #8f98a0;
+    max-width: 520px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.hero-divider {
+    width: 60px;
+    height: 2px;
+    background: #66c0f4;
+    margin: 20px auto 0;
+    border-radius: 2px;
+}
+
+/* ── CARDS SECTION ── */
+.cards-section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 48px 24px 64px;
+}
+
+.section-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #4e6272;
+    margin-bottom: 20px;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+/* ── BOTÕES / CARDS ── */
+.game-btn {
+    background: #16202c;
+    border: 1px solid #2a3f5a;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.15s, transform 0.15s;
+    color: inherit;
+}
+
+.game-btn:hover {
+    border-color: #66c0f4;
+    transform: translateY(-3px);
+}
+
+.game-btn:hover .card-arrow {
+    color: #66c0f4;
+}
+
+/* Capas dos cards */
+.card-cover {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 64px;
+    position: relative;
+}
+
+.card-cover.sonic {
+    background: linear-gradient(135deg, #003087 0%, #0060c8 60%, #003087 100%);
+    color: #5ec8ff;
+}
+
+.card-cover.mario {
+    background: linear-gradient(135deg, #b22222 0%, #e63232 60%, #b22222 100%);
+    color: #ffe87a;
+}
+
+.card-cover.souls {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 60%, #0a0a0a 100%);
+    color: #c8a96e;
+}
+
+.card-shine {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+/* Corpo do card */
+.card-body {
+    padding: 14px 16px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.card-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.card-desc {
+    font-size: 12px;
+    color: #8f98a0;
+    line-height: 1.5;
+    flex: 1;
+}
+
+/* Rodapé do card */
+.card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 16px;
+    border-top: 1px solid #2a3f5a;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.card-tag {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 2px 8px;
+    border-radius: 2px;
+}
+
+.tag-sonic { background: #0d2a4a; color: #5ec8ff; }
+.tag-mario { background: #3a0a0a; color: #ffb07f; }
+.tag-souls { background: #1a150a; color: #c8a96e; }
+
+.card-arrow {
+    font-size: 16px;
+    color: #4e6272;
+    transition: color 0.15s;
+}
+
+/* ── FOOTER ── */
+.steam-footer {
+    background: #171d25;
+    border-top: 1px solid #000;
+    padding: 20px 24px;
+    text-align: center;
+    font-size: 11px;
+    color: #4e6272;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: #4e6272;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    color: #8f98a0;
+}
+
+/* ── RESPONSIVO ── */
+@media (max-width: 600px) {
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .home-h1 {
+        font-size: 22px;
+    }
+}
